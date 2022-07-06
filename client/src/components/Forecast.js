@@ -26,7 +26,7 @@ const Forecast = (props) => {
 
   return (
     <div className="Forecast"> 
-      <h2>Forecast</h2> 
+      <h2>15-Day Forecast</h2> 
       <div className="forecast-data">
         {renderedForecast}
       </div>
