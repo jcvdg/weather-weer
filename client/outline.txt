@@ -1,0 +1,31 @@
+- user
+- search by zip, city, country code
+    - date
+- view
+
+- client
+- have the main pages.
+- use fetch to get result from the server
+
+
+- server
+- DATA: queries/day - need to limit
+- GET: /
+- GET: /weather
+--- zip code, country code
+--- city name, countrycode
+-- check count first, then fetch DATA
+-- parse data and return to client
+
+
+
+Browser:
+- city
+- date
+
+Client:
+- get forecast --> Server: gets forecast --> DB: count++
+ --> render Forecast
+- store the lat & long, check if date is provided
+- get historicdata --> Server: getHistoric data - count +=dates/queryCost
+ --> render historicdata
