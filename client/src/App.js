@@ -16,7 +16,8 @@ const App = () => {
  
     // upate to getforecast
     const getWeather = () => {
-        fetch(`/weather/${city}`)
+        console.log(`GETTING WEATHER!!! - /weather/${city}`);
+        fetch(`https://weather-weer.herokuapp.com/weather/${city}`)
         .then( response => response.json())
         .then( data => { 
             console.log(city);
