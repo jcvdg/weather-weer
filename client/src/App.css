@@ -27,7 +27,7 @@ body {
 }
 
 .container-small {
-  width: 43vw;
+  width: 38rem;
   height: auto;
 }
 
@@ -37,7 +37,7 @@ body {
 
 .search-form,
 .forecast {
-  width: 43vw;
+  width: 38rem;
   padding: 2rem;
 }
 

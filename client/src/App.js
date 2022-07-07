@@ -16,7 +16,6 @@ const App = () => {
  
     // upate to getforecast
     const getWeather = () => {
-        console.log(`GETTING WEATHER!!! - /weather/${city}`);
         fetch(`https://weather-weer.herokuapp.com/weather/${city}`)
         .then( response => response.json())
         .then( data => { 
@@ -24,7 +23,8 @@ const App = () => {
             console.log('client ',data)
             
             setWeatherData(data);
-            setLocation( {lat: data.latitude, lon: data.longitude} )
+            setLocation( {lat: data.latitude, lon: data.longitude} );
+            console.log('new location: ----', location, '---', data.latitude, data.longitude);
         })
         .catch(err => console.log(err));
     }
@@ -59,11 +59,10 @@ const App = () => {
             console.log(`Start date: ${start} - End date: ${end}`)
 
             try {
-
-                let response = await fetch(`/historicalweather/${location.lat}/${location.lon}/${start}/${end}`)
+                let response = await fetch(`https://weather-weer.herokuapp.com/historicalweather/${location.lat}/${location.lon}/${start}/${end}`)
                 let data = await response.json();
                 console.log(city);
-                console.log('historical response data::::: ',data)
+                console.log('historical response data: ',data)
                 let temp = tempHistoric
                 temp.push(data)
                 setTempHistoric( temp);

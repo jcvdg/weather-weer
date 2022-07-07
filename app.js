@@ -33,28 +33,30 @@ const updateQueryCount = (count) => {
   console.log(`update query count: ${count}`);
 };
 
-app.get(
-  '/historicalweather/:latitude/:longitude/:startdate/:enddate',
-  (request, response) => {
-    const {
-      latitude,
-      longitude,
-      startdate,
-      enddate,
-    } = request.params;
+app.get('/historicalweather/:latitude/:longitude/:startdate/:enddate', (request, response) => {
+  const {
+    latitude,
+    longitude,
+    startdate,
+    enddate,
+  } = request.params;
 
-    const apiUrlHistorical = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latitude},${longitude}/${startdate}/${enddate}?unitGroup=us&include=histfcst%2Cobs&elements=datetime,temp,tempmin,tempmax,icon,iconSet=icon2&key=${process.env.WEATHER_API_KEY}&contentType=json`;
+  console.log('otherget: ', latitude, longitude, startdate, enddate);
 
-    fetch(apiUrlHistorical)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log('Object ', data);
-        updateQueryCount(data.queryCost);
 
-        // const {latitude, longitude} = data;
-        console.log(data.latitude, data.longitude);
+  const apiUrlHistorical = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latitude},${longitude}/${startdate}/${enddate}?unitGroup=us&include=histfcst%2Cobs&elements=datetime,temp,tempmin,tempmax,icon,iconSet=icon2&key=${process.env.WEATHER_API_KEY}&contentType=json`;
 
-        response.json({
+  fetch(apiUrlHistorical)
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log('Object ', data);
+      updateQueryCount(data.queryCost);
+
+      // const {latitude, longitude} = data;
+      console.log(data.latitude, data.longitude);
+
+      response.json(
+        {
           // datetime: data.datetime,
           year: startdate.split('-')[0],
           start: startdate,
@@ -63,13 +65,13 @@ app.get(
           latitude: data.latitude,
           longitude: data.longitude,
           days: data.days,
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-);
+        },
+      );
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+});
 
 app.get('/weather/:city', (request, response) => {
   const cityName = request.params.city.toLowerCase();
@@ -85,7 +87,7 @@ app.get('/weather/:city', (request, response) => {
       updateQueryCount(data.queryCost);
 
       // const {latitude, longitude} = data;
-      console.log(data.latitude, data.longitude);
+      // console.log(data.latitude, data.longitude);
 
       response.json({
         datetime: data.datetime,
