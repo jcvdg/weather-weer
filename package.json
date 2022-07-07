@@ -1,14 +1,15 @@
 {
-  "name": "stay-motivated",
+  "name": "weather-weer",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm run --prefix ../client start   ",
-    "dev": "concurrently \"nodemon server\" \"npm run client\""
+    "client": "npm run --prefix client start",
+    "dev": "concurrently \"nodemon server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "",
+  "author": "Jeannie Chen",
   "license": "ISC",
   "type": "module",
   "dependencies": {

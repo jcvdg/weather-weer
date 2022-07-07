@@ -16,7 +16,7 @@ const App = () => {
  
     // upate to getforecast
     const getWeather = () => {
-        fetch(`http://localhost:8080/weather/${city}`)
+        fetch(`http://localhost:5000/weather/${city}`)
         .then( response => response.json())
         .then( data => { 
             console.log(city);
@@ -59,7 +59,7 @@ const App = () => {
 
             try {
 
-                let response = await fetch(`http://localhost:8080/historicalweather/${location.lat}/${location.lon}/${start}/${end}`)
+                let response = await fetch(`http://localhost:5000/historicalweather/${location.lat}/${location.lon}/${start}/${end}`)
                 let data = await response.json();
                 console.log(city);
                 console.log('historical response data::::: ',data)
