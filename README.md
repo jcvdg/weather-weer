@@ -12,8 +12,8 @@ Get the weather forecast for the next 15 days, and the weather history for a spe
 
 ### Screenshot
 
-![Screenshot of landing page](img/Screen%20Shot%202022-07-07%20at%208.25.27%20PM.png)
-![Screenshot of search result](img/Screen%20Shot%202022-07-06%20at%2012.07.38%20AM.png)
+![Screenshot of landing page](img/Screenshot%20-%20forecast.png)
+![Screenshot of search result](img/Screenshot%20-%20forecast%20and%20historical.png)
 
 ***
 ## Motivation
