@@ -4,19 +4,21 @@ Get the weather forecast for the next 15 days, and the weather history for a spe
 
 **Full Website:** https://weather-weer.herokuapp.com
 
-![Screenshot of landing page](img/Screen%20Shot%202022-07-06%20at%2012.07.38%20AM.png)
-![Screenshot of search result](img/Screen%20Shot%202022-07-07%20at%208.25.27%20PM.png)
-
 - [Weather Weer](#weather-weer)
   - [Motivation](#motivation)
   - [Optimizations](#optimizations)
   - [Lessons Learned](#lessons-learned)
   - [Built with](#built-with)
 
+### Screenshot
+
+![Screenshot of landing page](img/Screen%20Shot%202022-07-07%20at%208.25.27%20PM.png)
+![Screenshot of search result](img/Screen%20Shot%202022-07-06%20at%2012.07.38%20AM.png)
+
 ***
 ## Motivation
 
-I started this project initilially to learn how to work with API, and manipulating the DOM to present information to users. The product has since evolved to v2 as v1 broke when the weather API used stopped permitting cross domain requests, which is now resolved through the backend.  I took the opportunity to add weather forecast to expand on the product offering.  Additionally, I took my learning from V1 and converted to using React for the frontend.  See Lessons below for more details on this.
+I started this project initilially to learn how to work with API, and manipulating the DOM to present information to users. The product has since evolved to v2 as v1 broke when the weather API used stopped permitting cross domain requests, which is now resolved through the backend.  I took the opportunity to add weather forecast to expand on the product offering.  Additionally, I took my learning from V1 and converted to using React for the frontend.  See [Lessons Learned](#lessons-learned) below for more details on this.
 
 There are many Weather APIs available with free tiers that's great for learning and personal projects.  I chose Visual Crossing's API as I knew I wanted the option to get weather data from the past, and they were one of the few that offered the data history in the free tier.
 
